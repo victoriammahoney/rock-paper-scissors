@@ -10,18 +10,20 @@ import UIKit
 class ViewController: UIViewController
 {
     
-    var computerChosen: String = ""
+
     
     var randomInt = Int.random(in: 1...3)
     
     var playerChosen: String = ""
     
-    var computerInt: Int = 0
+
     
     //MARK: Outlets
     
     @IBOutlet weak var chooseYourFighter: UILabel!
     
+    
+    @IBOutlet weak var stackViewMain: UIStackView!
     @IBOutlet weak var rock: UILabel!
     @IBOutlet weak var rockPhoto: UIImageView!
     @IBOutlet weak var classWarrior: UILabel!
@@ -38,10 +40,22 @@ class ViewController: UIViewController
     @IBOutlet weak var classPriest: UILabel!
     @IBOutlet weak var scissorsDescription: UILabel!
     
+    @IBOutlet weak var playerImage: UIImageView!
+    @IBOutlet weak var computerImage: UIImageView!
+    @IBOutlet weak var crown1: UIImageView!
+    @IBOutlet weak var crown2: UIImageView!
+    @IBOutlet weak var youChose: UILabel!
+    @IBOutlet weak var opponentChose: UILabel!
+    @IBOutlet weak var whoWinsLabel: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
+    
+    
+    
+    
     
     
     //MARK: Part 1: Choose your fighter
-    
+        
     
     //MARK: Part 2:
     
@@ -49,26 +63,68 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        playerImage.isHidden = true
+        computerImage.isHidden = true
+        crown1.isHidden = true
+        crown2.isHidden = true
+        opponentChose.isHidden = true
+        youChose.isHidden = true
+        whoWinsLabel.isHidden = true
+        playAgainButton.isHidden = true
+        
         
     }
     
     
     @IBAction func whenRockTapped(_ sender: Any)
     {
+        
+        //MARK: Hidden
+        
+        stackViewMain.isHidden = true
+        rock.isHidden = true
+        rockPhoto.isHidden = true
+        classWarrior.isHidden = true
+        rockDescription.isHidden = true
+        paper.isHidden = true
+        paperPhoto.isHidden = true
+        classThief.isHidden = true
+        paperDescriptionOne.isHidden = true
+        paperDescriptionTwo.isHidden = true
+        scissors.isHidden = true
+        scissorsPhoto.isHidden = true
+        classPriest.isHidden = true
+        scissorsDescription.isHidden = true
+        
+        //MARK: Unhidden
+        
+        playerImage.isHidden = false
+        computerImage.isHidden = false
+        opponentChose.isHidden = false
+        youChose.isHidden = false
+        whoWinsLabel.isHidden = false
+        playAgainButton.isHidden = false
+        
+        playerImage.image = UIImage(named: "rock-drawing")
        
         if randomInt == 1 {
-            computerChosen = "Rock"
+            computerImage.image = UIImage(named: "rock-drawing")
+            whoWinsLabel.text = "It's a Draw"
         }
         
         if randomInt == 2 {
-            computerChosen = "Paper"
+            computerImage.image = UIImage(named: "paper-drawing")
+            whoWinsLabel.text = "Opponent Wins!"
+            crown2.isHidden = false
         }
         
         if randomInt == 3 {
-            computerChosen = "Scissors"
+            computerImage.image = UIImage(named: "scissors-drawing")
+            whoWinsLabel.text = "You Win!"
+            crown1.isHidden = false
         }
-        
+
         
         
         
@@ -78,14 +134,13 @@ class ViewController: UIViewController
     @IBAction func whenPaperTapped(_ sender: Any)
     {
         
-        
+
     }
     
     
     @IBAction func whenScissorsTapped(_ sender: Any)
     {
-        
-        
+
     }
     
     
