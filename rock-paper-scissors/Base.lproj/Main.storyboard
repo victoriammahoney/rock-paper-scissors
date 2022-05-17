@@ -149,8 +149,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-UA-fFh">
                                 <rect key="frame" x="146" y="520" width="126" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Play Again?"/>
+                                <connections>
+                                    <action selector="whenResetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27O-Xz-zjm"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="7pC-6x-YSj">
                                 <rect key="frame" x="158" y="600" width="95" height="47"/>
@@ -175,7 +179,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEa-As-roo">
-                                <rect key="frame" x="45" y="380" width="317" height="138"/>
+                                <rect key="frame" x="45" y="371" width="317" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="44"/>
                                 <nil key="textColor"/>
@@ -242,6 +246,9 @@
         <image name="paper-drawing" width="528.33331298828125" height="644.33331298828125"/>
         <image name="rock-drawing" width="562.66668701171875" height="690.66668701171875"/>
         <image name="scissors-drawing" width="564.66668701171875" height="687.33331298828125"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
